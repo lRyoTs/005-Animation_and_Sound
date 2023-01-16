@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false; //GameOver variable of the game
     private bool crouchToggle = false;
     private int playerLife = 3;
+    private bool isInvincible = false;
+    private float InvincibilitySeconds = 1.5f;
+    private float invincibilityDeltaTime = 0.15f;
 
     // Start is called before the first frame update
     void Start()
@@ -68,20 +71,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") && !isInvincible)
         {
-            playerLife--; //Reduce life
-            Debug.Log($"You lost a life. Remaining lifes {playerLife}");
-            Destroy(collision.gameObject); //Destroy object collided
-
-            //No lifes left
-            if (playerLife == 0)
-            {
-                GameOver();
-            }
-            else {
-                _audioSource.PlayOneShot(crashSound, 0.5f); //Hitted sound
-            }
+            LoseLife(); //Reduce 
+            //Destroy(collision.gameObject); //Destroy object collided
         }
     }
 
@@ -92,7 +85,35 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("Death_b", true); //Toggle on Death animator
         _animator.SetInteger("DeathType_int", type); //Get Death type
         explosionParticle.Play();
-        _audioSource.PlayOneShot(crashSound, 1);
+        _audioSource.PlayOneShot(crashSound, 2);
         dirtParticle.Stop();
+    }
+
+    //Function that reduce player life
+    private void LoseLife() {
+        playerLife--;
+        Debug.Log($"You lost a life. Remaining lifes {playerLife}");
+        _audioSource.PlayOneShot(crashSound, 0.5f); //Hitted sound
+        if (playerLife == 0)
+        {
+            GameOver();
+            return;
+        }
+        StartCoroutine("TemporalInvincibility"); //Start Coroutine
+    }
+
+    //Coroutine that makes player invincible
+    private IEnumerable TemporalInvincibility() {
+        Debug.Log("Player turned invincible!");
+        isInvincible = true;
+
+        for (float i = 0; i < InvincibilitySeconds; i += invincibilityDeltaTime)
+        {
+            // TODO: add any logic we want here
+            yield return new WaitForSeconds(invincibilityDeltaTime);
+        }
+
+        Debug.Log("Player is no longer invincible!");
+        isInvincible = false;
     }
 }
