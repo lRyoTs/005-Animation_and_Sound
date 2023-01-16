@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8848417294513016366}
   m_Layer: 0
   m_Name: Prop_Barrier02 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8275547261341174785}
   m_Layer: 0
   m_Name: Prop_Barrier02 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,6 +173,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 230964462974333582, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_TagString
+      value: Point
+      objectReference: {fileID: 0}
     - target: {fileID: 818823294614160686, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Size.x
       value: 2.2668247
@@ -193,6 +197,18 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 1.9921842
       objectReference: {fileID: 0}
+    - target: {fileID: 2519347895030872775, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4290414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519347895030872775, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_Center.x
+      value: 0.01662537
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519347895030872775, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_Center.z
+      value: -0.54726774
+      objectReference: {fileID: 0}
     - target: {fileID: 2847077482687809751, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Size.x
       value: 2.4304583
@@ -208,6 +224,14 @@ PrefabInstance:
     - target: {fileID: 3732908562596999654, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Name
       value: Barrera Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732908562596999654, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732908562596999656, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 3732908562597223878, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_RootOrder
@@ -253,6 +277,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5340534565545551413, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5400506664263831192, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Size.x
       value: 2.2750084
@@ -268,6 +296,18 @@ PrefabInstance:
     - target: {fileID: 5400506664263831192, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Center.x
       value: 0.9374652
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746959878802362825, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746959878802362825, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0029246253
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746959878802362825, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+      propertyPath: m_Center.z
+      value: -1.90644
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
