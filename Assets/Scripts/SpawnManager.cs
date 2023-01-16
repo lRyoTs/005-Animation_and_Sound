@@ -18,13 +18,14 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
+        //GameOver Management
         if (PlayerControllerScript.gameOver) {
             CancelInvoke("SpawnObstacle");
         }    
     }
 
     private void SpawnObstacle() {
-        int index = Random.Range(0, obstaclePrefabs.Length);
+        int index = Random.Range(0, obstaclePrefabs.Length); //Get index
         Instantiate(obstaclePrefabs[index], spawnPos, obstaclePrefabs[index].transform.rotation);
     }
 }
