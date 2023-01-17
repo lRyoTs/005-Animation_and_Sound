@@ -704,6 +704,8 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 3707331815930299418, guid: 213741f2c6d2c0d4b88ad892c83def22, type: 3}
   - {fileID: 3732908562596999654, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+  - {fileID: 4369789928316545598, guid: 24b05c83021c9b44babdd00a8ba9041b, type: 3}
+  - {fileID: 3144966492697977896, guid: 240a46874218e7b409f6d8a4385a2462, type: 3}
 --- !u!4 &1490799592
 Transform:
   m_ObjectHideFlags: 0
@@ -754,6 +756,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
   crashSound: {fileID: 8300000, guid: e7ee25a47d63b46cdaf65480d62b405c, type: 3}
   gameOver: 0
+  playerScore: 0
 --- !u!54 &1520952158
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false; //GameOver variable of the game
     private bool crouchToggle = false;
     private int playerLife = 3;
+    public int playerScore;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,15 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>(); //Get component <animator> information of the player
         _audioSource = GetComponent<AudioSource>(); //Get component <audioSource> information of the player
         Physics.gravity *= gravityModifier;
+        playerScore = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Update Score
+        IncreaseScoreForSecond();
+
         //Jump input
         if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround && !gameOver) {
             isOnTheGround = false;
@@ -55,6 +61,20 @@ public class PlayerController : MonoBehaviour
             crouchToggle = true;
         }
         _animator.SetBool("Crouch_b", crouchToggle);
+
+        //Socre Updater
+        timer += Time.deltaTime;
+        if (timer > 1f && playerScore < 50000 && !gameOver)
+        {
+            IncreaseScoreForSecond();
+            timer = 0;
+        }
+        //Display Score
+        if (playerScore%5000==0 && playerScore != 0 && playerScore < 100000)
+        {
+            Debug.Log($"{playerScore}");
+        }
+        
     }
 
     //Function of the player collision
@@ -94,5 +114,10 @@ public class PlayerController : MonoBehaviour
         explosionParticle.Play();
         _audioSource.PlayOneShot(crashSound, 1);
         dirtParticle.Stop();
+    }
+
+    //Function that Increase score for second
+    private void IncreaseScoreForSecond() {
+        playerScore++;
     }
 }

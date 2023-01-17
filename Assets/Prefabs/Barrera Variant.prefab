@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528984190102787012}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1.5745, y: 1.5745, z: 1.5745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8275547261341174785}
   m_Layer: 0
   m_Name: Prop_Barrier02 (1)
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4692426154691406192}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1.5745, y: 1.5745, z: 1.5745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -199,15 +199,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2519347895030872775, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Size.z
-      value: 1.4290414
+      value: 2.2509978
       objectReference: {fileID: 0}
     - target: {fileID: 2519347895030872775, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Center.x
-      value: 0.01662537
+      value: 0.016625373
       objectReference: {fileID: 0}
     - target: {fileID: 2519347895030872775, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Center.z
-      value: -0.54726774
+      value: -0.87893504
       objectReference: {fileID: 0}
     - target: {fileID: 2847077482687809751, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_Size.x
@@ -227,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732908562596999654, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 3732908562596999656, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
       propertyPath: m_TagString

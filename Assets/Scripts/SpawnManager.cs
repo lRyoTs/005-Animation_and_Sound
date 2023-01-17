@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject [] obstaclePrefabs;
+    public GameObject[] obstaclePrefabs;
     private Vector3 spawnPos = new Vector3(25, 0, 0);
     private PlayerController PlayerControllerScript; //get player controller info
     private float startDelay = 2f;
@@ -21,11 +21,23 @@ public class SpawnManager : MonoBehaviour
         //GameOver Management
         if (PlayerControllerScript.gameOver) {
             CancelInvoke("SpawnObstacle");
-        }    
+        }
     }
 
     private void SpawnObstacle() {
-        int index = Random.Range(0, obstaclePrefabs.Length); //Get index
+        int indexlength;
+        if (PlayerControllerScript.playerScore > 30000)
+        {
+            indexlength = obstaclePrefabs.Length;
+        }
+        else if (PlayerControllerScript.playerScore > 10000)
+        {
+            indexlength = obstaclePrefabs.Length - 1;
+        }
+        else {
+            indexlength = 2;
+        }
+        int index = Random.Range(0, indexlength); //Get index
         Instantiate(obstaclePrefabs[index], spawnPos, obstaclePrefabs[index].transform.rotation);
     }
 }
