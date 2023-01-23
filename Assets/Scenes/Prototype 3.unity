@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100066, guid: 70ab0d3e71b54ac4bbd703cb0a686c4d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 70ab0d3e71b54ac4bbd703cb0a686c4d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -704,6 +708,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 3707331815930299418, guid: 213741f2c6d2c0d4b88ad892c83def22, type: 3}
   - {fileID: 3732908562596999654, guid: 377df4386b9dc7c47ae4c68d34a1db9b, type: 3}
+  - {fileID: 5458500503181572780, guid: 7f5aff59ac6a9944b8c109da1bee3ac7, type: 3}
   - {fileID: 4369789928316545598, guid: 24b05c83021c9b44babdd00a8ba9041b, type: 3}
   - {fileID: 3144966492697977896, guid: 240a46874218e7b409f6d8a4385a2462, type: 3}
 --- !u!4 &1490799592

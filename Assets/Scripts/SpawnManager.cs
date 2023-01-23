@@ -26,11 +26,11 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnObstacle() {
         int indexlength;
-        if (PlayerControllerScript.playerScore > 30000)
+        if (PlayerControllerScript.playerScore > 200)
         {
             indexlength = obstaclePrefabs.Length;
         }
-        else if (PlayerControllerScript.playerScore > 10000)
+        else if (PlayerControllerScript.playerScore > 150)
         {
             indexlength = obstaclePrefabs.Length - 1;
         }

@@ -18,7 +18,7 @@ public class MoveLeft : MonoBehaviour
     {
         if (!PlayerControllerScript.gameOver) //If is not game over
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
+            transform.Translate(Vector3.left * speed * Time.deltaTime,Space.World);
         }
 
         //if obstacle out of bounds

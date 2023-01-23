@@ -38,21 +38,18 @@ public class PlayerController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>(); //Get component <audioSource> information of the player
         Physics.gravity *= gravityModifier;
         playerScore = 0;
+        Debug.Log("SPACE = Jump   HOLD L_CTRL = Crouch");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Update Score
-        IncreaseScoreForSecond();
+        //AutoMove();
 
         //Jump input
-        if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround && !gameOver) {
-            isOnTheGround = false;
-            dirtParticle.Stop();
-            _animator.SetTrigger("Jump_trig"); //Trigger jump animator
-            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            _audioSource.PlayOneShot(jumpSound, 1);
+        if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround && !gameOver)
+        {
+            Jump();
         }
 
         //Crounch controls
@@ -62,19 +59,20 @@ public class PlayerController : MonoBehaviour
         }
         _animator.SetBool("Crouch_b", crouchToggle);
 
-        //Socre Updater
+        //Score Updater
         timer += Time.deltaTime;
-        if (timer > 1f && playerScore < 50000 && !gameOver)
+        if (timer > 1f && playerScore < 1000 && !gameOver)
         {
             IncreaseScoreForSecond();
             timer = 0;
         }
+        /*
         //Display Score
-        if (playerScore%5000==0 && playerScore != 0 && playerScore < 100000)
+        if (playerScore%50==0 && playerScore != 0 && playerScore < 1000 && !gameOver)
         {
-            Debug.Log($"{playerScore}");
+            Debug.Log($"Current Score: {playerScore}");
         }
-        
+        */
     }
 
     //Function of the player collision
@@ -118,6 +116,29 @@ public class PlayerController : MonoBehaviour
 
     //Function that Increase score for second
     private void IncreaseScoreForSecond() {
-        playerScore++;
+        playerScore += 5;
+    }
+
+    /*
+    private void AutoMove() {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.right, out hit)) {
+            Debug.Log($"Found an object - distance: {hit.distance}");
+            float distance = hit.distance - transform.position.magnitude;
+            if (distance == 3)
+            {
+                Jump();// execute your code here
+            }
+        }
+           
+    }
+    */
+
+    private void Jump() {
+        isOnTheGround = false;
+        dirtParticle.Stop();
+        _animator.SetTrigger("Jump_trig"); //Trigger jump animator
+        _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        _audioSource.PlayOneShot(jumpSound, 1);
     }
 }
